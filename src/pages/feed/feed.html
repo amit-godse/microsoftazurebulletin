@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>Ionic Feed Reader</ion-title>
+      <ion-buttons end>
+          <button (click)="add()"><ion-icon name="add"></ion-icon></button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="feed">
+  <ion-list>
+      <ion-item text-wrap *ngFor="let item of feedList" (click)="open(item)">
+          <h2>{{item.title}}</h2>
+          <p>{{item.description}}</p>
+          <ion-icon name="ios-arrow-forward" item-right></ion-icon>
+      </ion-item>
+  </ion-list>
+</ion-content>
