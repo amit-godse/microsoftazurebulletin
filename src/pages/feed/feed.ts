@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { Http, Request, RequestMethod } from "@angular/http";
 import { NavController } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { SourcesPage } from "../sources/sources";
-import { Database } from "../../providers/database/database";
 import 'rxjs/Rx';
 
 @Component({
@@ -13,7 +11,7 @@ export class FeedPage {
 
     public feedList: Array<Object>;
 
-    public constructor(private navCtrl: NavController, private http: Http, private database: Database) {
+    public constructor(private navCtrl: NavController, private http: Http) {
         this.feedList = [];
     }
 
@@ -53,10 +51,6 @@ export class FeedPage {
         let browser = new InAppBrowser();
         browser.create(item.link);
         
-    }
-
-    public add() {
-        this.navCtrl.push(SourcesPage);
     }
 
 }

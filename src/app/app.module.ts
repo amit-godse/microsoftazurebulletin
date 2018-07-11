@@ -7,14 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { FeedPage } from '../pages/feed/feed';
-import { SourcesPage } from '../pages/sources/sources';
-import { Database } from '../providers/database/database';
 
 @NgModule({
   declarations: [
     MyApp,
-    FeedPage,
-    SourcesPage
+    FeedPage
 
   ],
   imports: [
@@ -25,14 +22,12 @@ import { Database } from '../providers/database/database';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    FeedPage,
-    SourcesPage
+    FeedPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Database
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
